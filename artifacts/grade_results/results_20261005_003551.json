@@ -1,0 +1,910 @@
+{
+  "eval_case_results": [
+    {
+      "eval_case_index": 0,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "custom_response_quality": {
+              "metric_name": "custom_response_quality",
+              "score": 5.0,
+              "explanation": "The workout perfectly adheres to all user requests and constraints: it includes both dumbbell curls and tricep pushdowns, avoids bench press, squats, and deadlifts, and is exceptionally well-structured with clear sets, reps, rest intervals, warm-up, cool-down, and technique cues.",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eval_case_index": 1,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "custom_response_quality": {
+              "metric_name": "custom_response_quality",
+              "score": null,
+              "explanation": null,
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": "No response found for candidate 0 in EvalCase leg_day_squats_coach_pause."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eval_case_index": 2,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "custom_response_quality": {
+              "metric_name": "custom_response_quality",
+              "score": null,
+              "explanation": null,
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": "No response found for candidate 0 in EvalCase back_day_deadlifts_coach_pause."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary_metrics": [
+    {
+      "metric_name": "custom_response_quality",
+      "num_cases_total": 3,
+      "num_cases_valid": 1,
+      "num_cases_error": 2,
+      "mean_score": 5.0,
+      "stdev_score": null,
+      "pass_rate": null
+    }
+  ],
+  "win_rates": null,
+  "evaluation_dataset": [
+    {
+      "bigquery_source": null,
+      "gcs_source": null,
+      "eval_cases": [
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "Design an arm workout routine for me today with dumbbell curls and tricep pushdowns. Do not include bench press, squats, or deadlifts.",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null,
+                "audio_transcription": null,
+                "media_processing": null,
+                "speech_metadata": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "Your arm workout routine has been **approved** and is ready to go! Here is your complete plan for today:\n\n---\n\n# \ud83e\uddbe Approved Arms Workout Routine\n\n### **Warm-up (5\u20137 minutes)**\n* **Arm Circles:** 30 seconds forward, 30 seconds backward\n* **Band Pull-Aparts:** 2 sets of 15 reps\n* **Wrist & Elbow Mobility:** Light wrist circles and arm swings\n\n---\n\n### **Primary Exercises**\n\n1. **Dumbbell Bicep Curls**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep your elbows pinned close to your torso. Focus on a controlled 2-second eccentric (lowering) phase.\n\n2. **Cable Tricep Pushdowns**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep your upper arms stationary against your ribs and squeeze your triceps firmly at the bottom of each rep.\n\n3. **Incline Dumbbell Hammer Curls**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep palms facing each other (neutral grip) to target the brachialis and forearm flexors.\n\n4. **Overhead Dumbbell Tricep Extension**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Maintain vertical upper arms and avoid letting your elbows flare excessively outward.\n\n---\n\n### **Cool-down (5 minutes)**\n* **Overhead Tricep Stretch:** 30 seconds per arm\n* **Standing Bicep Wall Stretch:** 30 seconds per arm\n* **Wrist Release & Deep Breathing:** 1\u20132 minutes\n\n---\n\n### Coach's Tips:\n- Select a weight that leaves 1\u20132 reps in reserve (RPE 8) on your first set.\n- Stay hydrated and focus on mind-muscle connection over heavy momentum swinging. Have a great workout!",
+                    "thought": null,
+                    "thought_signature": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null,
+                    "audio_transcription": null,
+                    "media_processing": null,
+                    "speech_metadata": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": null,
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "arms_routine_instant_approval",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "workout_agent_service": {
+                "agent_id": "workout_agent_service",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are a professional fitness coach and workout routine designer.\nYour goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).\n\nInstructions:\n1. Identify the user's workout focus for the day.\n2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.\n3. Call the `submit_workout_routine` tool with:\n   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).\n   - `workout_plan`: the complete, nicely formatted workout plan markdown.\n   - `focus_area`: the user's focus area for the day.\n4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.\n5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.\n6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.\n",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Submits and evaluates the workout routine for approval.\n\nIf the routine includes bench press, squats, or deadlifts, it triggers a\nhuman-in-the-loop pause asking the user whether they want to work with a coach.\nOtherwise, the routine is instantly approved.\n\nArgs:\n    exercises: List of exercise names included in the routine (e.g. ['Barbell Back Squat', 'Leg Press']).\n    workout_plan: The detailed workout routine in markdown (warm-up, sets, reps, rest, cool-down).\n    focus_area: The user's focus area for the day (e.g. 'legs', 'arms', 'chest', 'core').\n    tool_context: Context provided by the ADK runtime.\n\nReturns:\n    A dictionary with approval status and workout details.",
+                        "name": "submit_workout_routine",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "exercises": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "title": "Exercises",
+                              "type": "array"
+                            },
+                            "workout_plan": {
+                              "title": "Workout Plan",
+                              "type": "string"
+                            },
+                            "focus_area": {
+                              "title": "Focus Area",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "exercises",
+                            "workout_plan",
+                            "focus_area"
+                          ],
+                          "title": "submit_workout_routineParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "additionalProperties": true,
+                          "type": "object"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "call_2394423",
+                            "args": {
+                              "exercises": [
+                                "Dumbbell Bicep Curls",
+                                "Cable Tricep Pushdowns",
+                                "Incline Dumbbell Hammer Curls",
+                                "Overhead Dumbbell Tricep Extension"
+                              ],
+                              "workout_plan": "# Arms Workout Routine\n\n### Warm-up (5\u20137 minutes)\n- Arm Circles: 30 seconds forward, 30 seconds backward\n- Band Pull-Aparts: 2 sets of 15 reps\n- Light wrist and elbow mobility drills\n\n---\n\n### Main Workout\n1. **Dumbbell Bicep Curls**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 60 seconds\n   - *Tip:* Keep your elbows tucked close to your torso and avoid swinging your body.\n\n2. **Cable Tricep Pushdowns**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 60 seconds\n   - *Tip:* Pin your elbows to your sides and squeeze hard at full extension.\n\n3. **Incline Dumbbell Hammer Curls**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 60 seconds\n   - *Tip:* Target the brachialis and forearms; maintain a neutral grip throughout.\n\n4. **Overhead Dumbbell Tricep Extension**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 60 seconds\n   - *Tip:* Keep your upper arms vertical and flare elbows out as little as possible.\n\n---\n\n### Cool-down (5 minutes)\n- Overhead Tricep Stretch: 30 seconds per arm\n- Standing Bicep Wall Stretch: 30 seconds per arm\n- Deep breathing & wrist mobility release",
+                              "focus_area": "arms"
+                            },
+                            "name": "submit_workout_routine",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-05T00:34:53.810501Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": {
+                            "will_continue": null,
+                            "scheduling": null,
+                            "parts": null,
+                            "id": "call_2394423",
+                            "name": "submit_workout_routine",
+                            "response": {
+                              "status": "instantly_approved",
+                              "message": "No bench press, squats, or deadlifts in this routine. Workout routine is instantly approved!",
+                              "workout_plan": "# Arms Workout Routine\n\n### Warm-up (5\u20137 minutes)\n- Arm Circles: 30 seconds forward, 30 seconds backward\n- Band Pull-Aparts: 2 sets of 15 reps\n- Light wrist and elbow mobility drills\n\n---\n\n### Main Workout\n1. **Dumbbell Bicep Curls**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 60 seconds\n   - *Tip:* Keep your elbows tucked close to your torso and avoid swinging your body.\n\n2. **Cable Tricep Pushdowns**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 60 seconds\n   - *Tip:* Pin your elbows to your sides and squeeze hard at full extension.\n\n3. **Incline Dumbbell Hammer Curls**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 60 seconds\n   - *Tip:* Target the brachialis and forearms; maintain a neutral grip throughout.\n\n4. **Overhead Dumbbell Tricep Extension**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 60 seconds\n   - *Tip:* Keep your upper arms vertical and flare elbows out as little as possible.\n\n---\n\n### Cool-down (5 minutes)\n- Overhead Tricep Stretch: 30 seconds per arm\n- Standing Bicep Wall Stretch: 30 seconds per arm\n- Deep breathing & wrist mobility release"
+                            }
+                          },
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": "2026-10-05T00:34:59.272146Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "Your arm workout routine has been **approved** and is ready to go! Here is your complete plan for today:\n\n---\n\n# \ud83e\uddbe Approved Arms Workout Routine\n\n### **Warm-up (5\u20137 minutes)**\n* **Arm Circles:** 30 seconds forward, 30 seconds backward\n* **Band Pull-Aparts:** 2 sets of 15 reps\n* **Wrist & Elbow Mobility:** Light wrist circles and arm swings\n\n---\n\n### **Primary Exercises**\n\n1. **Dumbbell Bicep Curls**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep your elbows pinned close to your torso. Focus on a controlled 2-second eccentric (lowering) phase.\n\n2. **Cable Tricep Pushdowns**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep your upper arms stationary against your ribs and squeeze your triceps firmly at the bottom of each rep.\n\n3. **Incline Dumbbell Hammer Curls**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep palms facing each other (neutral grip) to target the brachialis and forearm flexors.\n\n4. **Overhead Dumbbell Tricep Extension**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Maintain vertical upper arms and avoid letting your elbows flare excessively outward.\n\n---\n\n### **Cool-down (5 minutes)**\n* **Overhead Tricep Stretch:** 30 seconds per arm\n* **Standing Bicep Wall Stretch:** 30 seconds per arm\n* **Wrist Release & Deep Breathing:** 1\u20132 minutes\n\n---\n\n### Coach's Tips:\n- Select a weight that leaves 1\u20132 reps in reserve (RPE 8) on your first set.\n- Stay hydrated and focus on mind-muscle connection over heavy momentum swinging. Have a great workout!",
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-05T00:34:59.275548Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        },
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "Design a heavy leg day workout routine for me today with barbell back squats.",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null,
+                "audio_transcription": null,
+                "media_processing": null,
+                "speech_metadata": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": null,
+          "reference": null,
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "leg_day_squats_coach_pause",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "workout_agent_service": {
+                "agent_id": "workout_agent_service",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are a professional fitness coach and workout routine designer.\nYour goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).\n\nInstructions:\n1. Identify the user's workout focus for the day.\n2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.\n3. Call the `submit_workout_routine` tool with:\n   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).\n   - `workout_plan`: the complete, nicely formatted workout plan markdown.\n   - `focus_area`: the user's focus area for the day.\n4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.\n5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.\n6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.\n",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Submits and evaluates the workout routine for approval.\n\nIf the routine includes bench press, squats, or deadlifts, it triggers a\nhuman-in-the-loop pause asking the user whether they want to work with a coach.\nOtherwise, the routine is instantly approved.\n\nArgs:\n    exercises: List of exercise names included in the routine (e.g. ['Barbell Back Squat', 'Leg Press']).\n    workout_plan: The detailed workout routine in markdown (warm-up, sets, reps, rest, cool-down).\n    focus_area: The user's focus area for the day (e.g. 'legs', 'arms', 'chest', 'core').\n    tool_context: Context provided by the ADK runtime.\n\nReturns:\n    A dictionary with approval status and workout details.",
+                        "name": "submit_workout_routine",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "exercises": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "title": "Exercises",
+                              "type": "array"
+                            },
+                            "workout_plan": {
+                              "title": "Workout Plan",
+                              "type": "string"
+                            },
+                            "focus_area": {
+                              "title": "Focus Area",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "exercises",
+                            "workout_plan",
+                            "focus_area"
+                          ],
+                          "title": "submit_workout_routineParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "additionalProperties": true,
+                          "type": "object"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "call_1259804",
+                            "args": {
+                              "exercises": [
+                                "Barbell Back Squat",
+                                "Romanian Deadlift",
+                                "Leg Press",
+                                "Hamstring Curl",
+                                "Standing Calf Raise"
+                              ],
+                              "workout_plan": "# Heavy Leg Day Workout Routine\n\n## Warm-Up (8\u201310 Minutes)\n- 5 minutes light cardio (stationary bike or incline treadmill walk)\n- Dynamic stretches: Leg swings, bodyweight squats, hip openers, ankle mobility drills\n- Warm-up sets: 2\u20133 ramp-up sets of Barbell Back Squats with light/empty bar\n\n## Primary Workout\n1. **Barbell Back Squats**\n   - Sets: 4\n   - Reps: 5\u20136 reps (Heavy compound focus)\n   - Rest: 2.5\u20133 minutes between sets\n   - Notes: Maintain brace, chest up, hit parallel or below with control.\n\n2. **Romanian Deadlifts (RDLs)**\n   - Sets: 3\n   - Reps: 6\u20138 reps\n   - Rest: 2 minutes between sets\n   - Notes: Hinge at the hips, slight bend in knees, feel deep stretch in hamstrings.\n\n3. **Leg Press**\n   - Sets: 3\n   - Reps: 8\u201310 reps\n   - Rest: 90\u2013120 seconds\n   - Notes: Full range of motion without letting lower back round off the pad.\n\n4. **Lying or Seated Hamstring Curls**\n   - Sets: 3\n   - Reps: 10\u201312 reps\n   - Rest: 60\u201390 seconds\n   - Notes: Controlled eccentric (2\u20133 seconds down).\n\n5. **Standing Calf Raises**\n   - Sets: 4\n   - Reps: 12\u201315 reps\n   - Rest: 60 seconds\n   - Notes: Full stretch at the bottom and a 1-second pause at the peak contraction.\n\n## Cool-Down & Mobility (5\u20138 Minutes)\n- Light walking to bring heart rate down\n- Static stretching: Quad stretch, seated forward bend for hamstrings, pigeon pose for glutes, and calf stretch.",
+                              "focus_area": "legs"
+                            },
+                            "name": "submit_workout_routine",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-05T00:34:53.977412Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "adk-00edad23-0797-489a-b34e-bf056ddaf125",
+                            "args": {
+                              "originalFunctionCall": {
+                                "id": "call_1259804",
+                                "args": {
+                                  "exercises": [
+                                    "Barbell Back Squat",
+                                    "Romanian Deadlift",
+                                    "Leg Press",
+                                    "Hamstring Curl",
+                                    "Standing Calf Raise"
+                                  ],
+                                  "workout_plan": "# Heavy Leg Day Workout Routine\n\n## Warm-Up (8\u201310 Minutes)\n- 5 minutes light cardio (stationary bike or incline treadmill walk)\n- Dynamic stretches: Leg swings, bodyweight squats, hip openers, ankle mobility drills\n- Warm-up sets: 2\u20133 ramp-up sets of Barbell Back Squats with light/empty bar\n\n## Primary Workout\n1. **Barbell Back Squats**\n   - Sets: 4\n   - Reps: 5\u20136 reps (Heavy compound focus)\n   - Rest: 2.5\u20133 minutes between sets\n   - Notes: Maintain brace, chest up, hit parallel or below with control.\n\n2. **Romanian Deadlifts (RDLs)**\n   - Sets: 3\n   - Reps: 6\u20138 reps\n   - Rest: 2 minutes between sets\n   - Notes: Hinge at the hips, slight bend in knees, feel deep stretch in hamstrings.\n\n3. **Leg Press**\n   - Sets: 3\n   - Reps: 8\u201310 reps\n   - Rest: 90\u2013120 seconds\n   - Notes: Full range of motion without letting lower back round off the pad.\n\n4. **Lying or Seated Hamstring Curls**\n   - Sets: 3\n   - Reps: 10\u201312 reps\n   - Rest: 60\u201390 seconds\n   - Notes: Controlled eccentric (2\u20133 seconds down).\n\n5. **Standing Calf Raises**\n   - Sets: 4\n   - Reps: 12\u201315 reps\n   - Rest: 60 seconds\n   - Notes: Full stretch at the bottom and a 1-second pause at the peak contraction.\n\n## Cool-Down & Mobility (5\u20138 Minutes)\n- Light walking to bring heart rate down\n- Static stretching: Quad stretch, seated forward bend for hamstrings, pigeon pose for glutes, and calf stretch.",
+                                  "focus_area": "legs"
+                                },
+                                "name": "submit_workout_routine"
+                              },
+                              "toolConfirmation": {
+                                "hint": "Your workout routine requires heavy compound lift(s): Barbell Back Squat, Romanian Deadlift. Would you like to work with a coach for form and safety guidance?",
+                                "confirmed": false,
+                                "payload": {
+                                  "focus_area": "legs",
+                                  "compound_lifts": [
+                                    "Barbell Back Squat",
+                                    "Romanian Deadlift"
+                                  ],
+                                  "exercises": [
+                                    "Barbell Back Squat",
+                                    "Romanian Deadlift",
+                                    "Leg Press",
+                                    "Hamstring Curl",
+                                    "Standing Calf Raise"
+                                  ],
+                                  "workout_plan": "# Heavy Leg Day Workout Routine\n\n## Warm-Up (8\u201310 Minutes)\n- 5 minutes light cardio (stationary bike or incline treadmill walk)\n- Dynamic stretches: Leg swings, bodyweight squats, hip openers, ankle mobility drills\n- Warm-up sets: 2\u20133 ramp-up sets of Barbell Back Squats with light/empty bar\n\n## Primary Workout\n1. **Barbell Back Squats**\n   - Sets: 4\n   - Reps: 5\u20136 reps (Heavy compound focus)\n   - Rest: 2.5\u20133 minutes between sets\n   - Notes: Maintain brace, chest up, hit parallel or below with control.\n\n2. **Romanian Deadlifts (RDLs)**\n   - Sets: 3\n   - Reps: 6\u20138 reps\n   - Rest: 2 minutes between sets\n   - Notes: Hinge at the hips, slight bend in knees, feel deep stretch in hamstrings.\n\n3. **Leg Press**\n   - Sets: 3\n   - Reps: 8\u201310 reps\n   - Rest: 90\u2013120 seconds\n   - Notes: Full range of motion without letting lower back round off the pad.\n\n4. **Lying or Seated Hamstring Curls**\n   - Sets: 3\n   - Reps: 10\u201312 reps\n   - Rest: 60\u201390 seconds\n   - Notes: Controlled eccentric (2\u20133 seconds down).\n\n5. **Standing Calf Raises**\n   - Sets: 4\n   - Reps: 12\u201315 reps\n   - Rest: 60 seconds\n   - Notes: Full stretch at the bottom and a 1-second pause at the peak contraction.\n\n## Cool-Down & Mobility (5\u20138 Minutes)\n- Light walking to bring heart rate down\n- Static stretching: Quad stretch, seated forward bend for hamstrings, pigeon pose for glutes, and calf stretch.",
+                                  "prompt": "Would you like to work with a coach?"
+                                }
+                              }
+                            },
+                            "name": "adk_request_confirmation",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-05T00:34:59.545910Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": {
+                            "will_continue": null,
+                            "scheduling": null,
+                            "parts": null,
+                            "id": "call_1259804",
+                            "name": "submit_workout_routine",
+                            "response": {
+                              "status": "paused_for_coach_confirmation",
+                              "message": "Routine requires ['Barbell Back Squat', 'Romanian Deadlift']. Paused for human-in-the-loop: prompting user whether they want to work with a coach."
+                            }
+                          },
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": "2026-10-05T00:34:59.545192Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        },
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "Design a back and posterior chain workout routine for me today centered around heavy barbell deadlifts.",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null,
+                "audio_transcription": null,
+                "media_processing": null,
+                "speech_metadata": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": null,
+          "reference": null,
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "back_day_deadlifts_coach_pause",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "workout_agent_service": {
+                "agent_id": "workout_agent_service",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are a professional fitness coach and workout routine designer.\nYour goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).\n\nInstructions:\n1. Identify the user's workout focus for the day.\n2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.\n3. Call the `submit_workout_routine` tool with:\n   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).\n   - `workout_plan`: the complete, nicely formatted workout plan markdown.\n   - `focus_area`: the user's focus area for the day.\n4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.\n5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.\n6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.\n",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Submits and evaluates the workout routine for approval.\n\nIf the routine includes bench press, squats, or deadlifts, it triggers a\nhuman-in-the-loop pause asking the user whether they want to work with a coach.\nOtherwise, the routine is instantly approved.\n\nArgs:\n    exercises: List of exercise names included in the routine (e.g. ['Barbell Back Squat', 'Leg Press']).\n    workout_plan: The detailed workout routine in markdown (warm-up, sets, reps, rest, cool-down).\n    focus_area: The user's focus area for the day (e.g. 'legs', 'arms', 'chest', 'core').\n    tool_context: Context provided by the ADK runtime.\n\nReturns:\n    A dictionary with approval status and workout details.",
+                        "name": "submit_workout_routine",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "exercises": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "title": "Exercises",
+                              "type": "array"
+                            },
+                            "workout_plan": {
+                              "title": "Workout Plan",
+                              "type": "string"
+                            },
+                            "focus_area": {
+                              "title": "Focus Area",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "exercises",
+                            "workout_plan",
+                            "focus_area"
+                          ],
+                          "title": "submit_workout_routineParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "additionalProperties": true,
+                          "type": "object"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "call_484069",
+                            "args": {
+                              "workout_plan": "### Back & Posterior Chain Strength Routine\n\n#### **Warm-up (8\u201310 minutes)**\n- Cat-Cow Stretch: 10 reps\n- World's Greatest Stretch: 5 reps per side\n- Glute Bridges: 2 sets of 12 reps\n- Banded Pull-aparts: 2 sets of 15 reps\n- Deadlift Ramp-up sets: Light bar work moving progressively up to working weight\n\n---\n\n#### **Working Sets**\n1. **Conventional Barbell Deadlift**\n   - Sets: 4\n   - Reps: 4\u20136\n   - Rest: 3\u20134 minutes\n   - *Cue:* Maintain a neutral spine, brace your core, and drive through the floor.\n\n2. **Barbell Row (Overhand Grip)**\n   - Sets: 3\n   - Reps: 8\u201310\n   - Rest: 2 minutes\n   - *Cue:* Hinge at the hips, pull towards the lower ribcage, squeeze scapulae.\n\n3. **Romanian Deadlift (Dumbbell or Barbell)**\n   - Sets: 3\n   - Reps: 8\u201310\n   - Rest: 2 minutes\n   - *Cue:* Push hips back while keeping knees soft, feel tension in hamstrings.\n\n4. **Lat Pulldown (Wide Grip)**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 90 seconds\n   - *Cue:* Depress shoulders, pull elbows down to sides.\n\n5. **Cable Face Pulls**\n   - Sets: 3\n   - Reps: 15\n   - Rest: 60 seconds\n   - *Cue:* Target rear delts and external rotators; pull rope towards eye level.\n\n---\n\n#### **Cool-down (5 minutes)**\n- Child's Pose: 60 seconds\n- Standing Hamstring Stretch: 30 seconds per side\n- Kneeling Lat Stretch: 30 seconds per side",
+                              "focus_area": "Back and Posterior Chain",
+                              "exercises": [
+                                "Barbell Deadlift",
+                                "Romanian Deadlift",
+                                "Barbell Row",
+                                "Lat Pulldown",
+                                "Face Pulls"
+                              ]
+                            },
+                            "name": "submit_workout_routine",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-05T00:34:53.984162Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "adk-064003b8-d2f8-49f8-a147-19ec4d62585c",
+                            "args": {
+                              "originalFunctionCall": {
+                                "id": "call_484069",
+                                "args": {
+                                  "workout_plan": "### Back & Posterior Chain Strength Routine\n\n#### **Warm-up (8\u201310 minutes)**\n- Cat-Cow Stretch: 10 reps\n- World's Greatest Stretch: 5 reps per side\n- Glute Bridges: 2 sets of 12 reps\n- Banded Pull-aparts: 2 sets of 15 reps\n- Deadlift Ramp-up sets: Light bar work moving progressively up to working weight\n\n---\n\n#### **Working Sets**\n1. **Conventional Barbell Deadlift**\n   - Sets: 4\n   - Reps: 4\u20136\n   - Rest: 3\u20134 minutes\n   - *Cue:* Maintain a neutral spine, brace your core, and drive through the floor.\n\n2. **Barbell Row (Overhand Grip)**\n   - Sets: 3\n   - Reps: 8\u201310\n   - Rest: 2 minutes\n   - *Cue:* Hinge at the hips, pull towards the lower ribcage, squeeze scapulae.\n\n3. **Romanian Deadlift (Dumbbell or Barbell)**\n   - Sets: 3\n   - Reps: 8\u201310\n   - Rest: 2 minutes\n   - *Cue:* Push hips back while keeping knees soft, feel tension in hamstrings.\n\n4. **Lat Pulldown (Wide Grip)**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 90 seconds\n   - *Cue:* Depress shoulders, pull elbows down to sides.\n\n5. **Cable Face Pulls**\n   - Sets: 3\n   - Reps: 15\n   - Rest: 60 seconds\n   - *Cue:* Target rear delts and external rotators; pull rope towards eye level.\n\n---\n\n#### **Cool-down (5 minutes)**\n- Child's Pose: 60 seconds\n- Standing Hamstring Stretch: 30 seconds per side\n- Kneeling Lat Stretch: 30 seconds per side",
+                                  "focus_area": "Back and Posterior Chain",
+                                  "exercises": [
+                                    "Barbell Deadlift",
+                                    "Romanian Deadlift",
+                                    "Barbell Row",
+                                    "Lat Pulldown",
+                                    "Face Pulls"
+                                  ]
+                                },
+                                "name": "submit_workout_routine"
+                              },
+                              "toolConfirmation": {
+                                "hint": "Your workout routine requires heavy compound lift(s): Barbell Deadlift, Romanian Deadlift. Would you like to work with a coach for form and safety guidance?",
+                                "confirmed": false,
+                                "payload": {
+                                  "focus_area": "Back and Posterior Chain",
+                                  "compound_lifts": [
+                                    "Barbell Deadlift",
+                                    "Romanian Deadlift"
+                                  ],
+                                  "exercises": [
+                                    "Barbell Deadlift",
+                                    "Romanian Deadlift",
+                                    "Barbell Row",
+                                    "Lat Pulldown",
+                                    "Face Pulls"
+                                  ],
+                                  "workout_plan": "### Back & Posterior Chain Strength Routine\n\n#### **Warm-up (8\u201310 minutes)**\n- Cat-Cow Stretch: 10 reps\n- World's Greatest Stretch: 5 reps per side\n- Glute Bridges: 2 sets of 12 reps\n- Banded Pull-aparts: 2 sets of 15 reps\n- Deadlift Ramp-up sets: Light bar work moving progressively up to working weight\n\n---\n\n#### **Working Sets**\n1. **Conventional Barbell Deadlift**\n   - Sets: 4\n   - Reps: 4\u20136\n   - Rest: 3\u20134 minutes\n   - *Cue:* Maintain a neutral spine, brace your core, and drive through the floor.\n\n2. **Barbell Row (Overhand Grip)**\n   - Sets: 3\n   - Reps: 8\u201310\n   - Rest: 2 minutes\n   - *Cue:* Hinge at the hips, pull towards the lower ribcage, squeeze scapulae.\n\n3. **Romanian Deadlift (Dumbbell or Barbell)**\n   - Sets: 3\n   - Reps: 8\u201310\n   - Rest: 2 minutes\n   - *Cue:* Push hips back while keeping knees soft, feel tension in hamstrings.\n\n4. **Lat Pulldown (Wide Grip)**\n   - Sets: 3\n   - Reps: 10\u201312\n   - Rest: 90 seconds\n   - *Cue:* Depress shoulders, pull elbows down to sides.\n\n5. **Cable Face Pulls**\n   - Sets: 3\n   - Reps: 15\n   - Rest: 60 seconds\n   - *Cue:* Target rear delts and external rotators; pull rope towards eye level.\n\n---\n\n#### **Cool-down (5 minutes)**\n- Child's Pose: 60 seconds\n- Standing Hamstring Stretch: 30 seconds per side\n- Kneeling Lat Stretch: 30 seconds per side",
+                                  "prompt": "Would you like to work with a coach?"
+                                }
+                              }
+                            },
+                            "name": "adk_request_confirmation",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": "2026-10-05T00:35:01.526700Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "workout_agent_service",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": {
+                            "will_continue": null,
+                            "scheduling": null,
+                            "parts": null,
+                            "id": "call_484069",
+                            "name": "submit_workout_routine",
+                            "response": {
+                              "status": "paused_for_coach_confirmation",
+                              "message": "Routine requires ['Barbell Deadlift', 'Romanian Deadlift']. Paused for human-in-the-loop: prompting user whether they want to work with a coach."
+                            }
+                          },
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null,
+                          "media_processing": null,
+                          "speech_metadata": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": "2026-10-05T00:35:01.526090Z",
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        }
+      ],
+      "eval_dataset_df": null,
+      "candidate_name": null
+    }
+  ],
+  "metadata": {
+    "candidate_names": [
+      "candidate_1"
+    ],
+    "dataset_name": null,
+    "dataset_id": null,
+    "creation_timestamp": "2026-10-05T00:35:51.629203Z",
+    "dataset": [
+      {
+        "prompt_display_text": "Design an arm workout routine for me today with dumbbell curls and tricep pushdowns. Do not include bench press, squats, or deadlifts.",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Design an arm workout routine for me today with dumbbell curls and tricep pushdowns. Do not include bench press, squats, or deadlifts.\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "",
+        "reference_raw_json": "",
+        "response_display_text": "Your arm workout routine has been **approved** and is ready to go! Here is your complete plan for today:\n\n---\n\n# \ud83e\uddbe Approved Arms Workout Routine\n\n### **Warm-up (5\u20137 minutes)**\n* **Arm Circles:** 30 seconds forward, 30 seconds backward\n* **Band Pull-Aparts:** 2 sets of 15 reps\n* **Wrist & Elbow Mobility:** Light wrist circles and arm swings\n\n---\n\n### **Primary Exercises**\n\n1. **Dumbbell Bicep Curls**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep your elbows pinned close to your torso. Focus on a controlled 2-second eccentric (lowering) phase.\n\n2. **Cable Tricep Pushdowns**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep your upper arms stationary against your ribs and squeeze your triceps firmly at the bottom of each rep.\n\n3. **Incline Dumbbell Hammer Curls**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Keep palms facing each other (neutral grip) to target the brachialis and forearm flexors.\n\n4. **Overhead Dumbbell Tricep Extension**\n   - **Sets:** 3\n   - **Reps:** 10\u201312\n   - **Rest:** 60 seconds\n   - *Form Cue:* Maintain vertical upper arms and avoid letting your elbows flare excessively outward.\n\n---\n\n### **Cool-down (5 minutes)**\n* **Overhead Tricep Stretch:** 30 seconds per arm\n* **Standing Bicep Wall Stretch:** 30 seconds per arm\n* **Wrist Release & Deep Breathing:** 1\u20132 minutes\n\n---\n\n### Coach's Tips:\n- Select a weight that leaves 1\u20132 reps in reserve (RPE 8) on your first set.\n- Stay hydrated and focus on mind-muscle connection over heavy momentum swinging. Have a great workout!",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Your arm workout routine has been **approved** and is ready to go! Here is your complete plan for today:\\n\\n---\\n\\n# \ud83e\uddbe Approved Arms Workout Routine\\n\\n### **Warm-up (5\u20137 minutes)**\\n* **Arm Circles:** 30 seconds forward, 30 seconds backward\\n* **Band Pull-Aparts:** 2 sets of 15 reps\\n* **Wrist & Elbow Mobility:** Light wrist circles and arm swings\\n\\n---\\n\\n### **Primary Exercises**\\n\\n1. **Dumbbell Bicep Curls**\\n   - **Sets:** 3\\n   - **Reps:** 10\u201312\\n   - **Rest:** 60 seconds\\n   - *Form Cue:* Keep your elbows pinned close to your torso. Focus on a controlled 2-second eccentric (lowering) phase.\\n\\n2. **Cable Tricep Pushdowns**\\n   - **Sets:** 3\\n   - **Reps:** 10\u201312\\n   - **Rest:** 60 seconds\\n   - *Form Cue:* Keep your upper arms stationary against your ribs and squeeze your triceps firmly at the bottom of each rep.\\n\\n3. **Incline Dumbbell Hammer Curls**\\n   - **Sets:** 3\\n   - **Reps:** 10\u201312\\n   - **Rest:** 60 seconds\\n   - *Form Cue:* Keep palms facing each other (neutral grip) to target the brachialis and forearm flexors.\\n\\n4. **Overhead Dumbbell Tricep Extension**\\n   - **Sets:** 3\\n   - **Reps:** 10\u201312\\n   - **Rest:** 60 seconds\\n   - *Form Cue:* Maintain vertical upper arms and avoid letting your elbows flare excessively outward.\\n\\n---\\n\\n### **Cool-down (5 minutes)**\\n* **Overhead Tricep Stretch:** 30 seconds per arm\\n* **Standing Bicep Wall Stretch:** 30 seconds per arm\\n* **Wrist Release & Deep Breathing:** 1\u20132 minutes\\n\\n---\\n\\n### Coach's Tips:\\n- Select a weight that leaves 1\u20132 reps in reserve (RPE 8) on your first set.\\n- Stay hydrated and focus on mind-muscle connection over heavy momentum swinging. Have a great workout!\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"workout_agent_service\": {\"agent_id\": \"workout_agent_service\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are a professional fitness coach and workout routine designer.\\nYour goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).\\n\\nInstructions:\\n1. Identify the user's workout focus for the day.\\n2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.\\n3. Call the `submit_workout_routine` tool with:\\n   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).\\n   - `workout_plan`: the complete, nicely formatted workout plan markdown.\\n   - `focus_area`: the user's focus area for the day.\\n4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.\\n5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.\\n6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.\\n\", \"tools\": [{\"function_declarations\": [{\"description\": \"Submits and evaluates the workout routine for approval.\\n\\nIf the routine includes bench press, squats, or deadlifts, it triggers a\\nhuman-in-the-loop pause asking the user whether they want to work with a coach.\\nOtherwise, the routine is instantly approved.\\n\\nArgs:\\n    exercises: List of exercise names included in the routine (e.g. ['Barbell Back Squat', 'Leg Press']).\\n    workout_plan: The detailed workout routine in markdown (warm-up, sets, reps, rest, cool-down).\\n    focus_area: The user's focus area for the day (e.g. 'legs', 'arms', 'chest', 'core').\\n    tool_context: Context provided by the ADK runtime.\\n\\nReturns:\\n    A dictionary with approval status and workout details.\", \"name\": \"submit_workout_routine\", \"parameters_json_schema\": {\"properties\": {\"exercises\": {\"items\": {\"type\": \"string\"}, \"title\": \"Exercises\", \"type\": \"array\"}, \"workout_plan\": {\"title\": \"Workout Plan\", \"type\": \"string\"}, \"focus_area\": {\"title\": \"Focus Area\", \"type\": \"string\"}}, \"required\": [\"exercises\", \"workout_plan\", \"focus_area\"], \"title\": \"submit_workout_routineParams\", \"type\": \"object\"}, \"response_json_schema\": {\"additionalProperties\": true, \"type\": \"object\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"call_2394423\", \"args\": {\"exercises\": [\"Dumbbell Bicep Curls\", \"Cable Tricep Pushdowns\", \"Incline Dumbbell Hammer Curls\", \"Overhead Dumbbell Tricep Extension\"], \"workout_plan\": \"# Arms Workout Routine\\n\\n### Warm-up (5\u20137 minutes)\\n- Arm Circles: 30 seconds forward, 30 seconds backward\\n- Band Pull-Aparts: 2 sets of 15 reps\\n- Light wrist and elbow mobility drills\\n\\n---\\n\\n### Main Workout\\n1. **Dumbbell Bicep Curls**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 60 seconds\\n   - *Tip:* Keep your elbows tucked close to your torso and avoid swinging your body.\\n\\n2. **Cable Tricep Pushdowns**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 60 seconds\\n   - *Tip:* Pin your elbows to your sides and squeeze hard at full extension.\\n\\n3. **Incline Dumbbell Hammer Curls**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 60 seconds\\n   - *Tip:* Target the brachialis and forearms; maintain a neutral grip throughout.\\n\\n4. **Overhead Dumbbell Tricep Extension**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 60 seconds\\n   - *Tip:* Keep your upper arms vertical and flare elbows out as little as possible.\\n\\n---\\n\\n### Cool-down (5 minutes)\\n- Overhead Tricep Stretch: 30 seconds per arm\\n- Standing Bicep Wall Stretch: 30 seconds per arm\\n- Deep breathing & wrist mobility release\", \"focus_area\": \"arms\"}, \"name\": \"submit_workout_routine\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-05T00:34:53.810501Z\"}, {\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"function_response\": {\"id\": \"call_2394423\", \"name\": \"submit_workout_routine\", \"response\": {\"status\": \"instantly_approved\", \"message\": \"No bench press, squats, or deadlifts in this routine. Workout routine is instantly approved!\", \"workout_plan\": \"# Arms Workout Routine\\n\\n### Warm-up (5\u20137 minutes)\\n- Arm Circles: 30 seconds forward, 30 seconds backward\\n- Band Pull-Aparts: 2 sets of 15 reps\\n- Light wrist and elbow mobility drills\\n\\n---\\n\\n### Main Workout\\n1. **Dumbbell Bicep Curls**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 60 seconds\\n   - *Tip:* Keep your elbows tucked close to your torso and avoid swinging your body.\\n\\n2. **Cable Tricep Pushdowns**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 60 seconds\\n   - *Tip:* Pin your elbows to your sides and squeeze hard at full extension.\\n\\n3. **Incline Dumbbell Hammer Curls**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 60 seconds\\n   - *Tip:* Target the brachialis and forearms; maintain a neutral grip throughout.\\n\\n4. **Overhead Dumbbell Tricep Extension**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 60 seconds\\n   - *Tip:* Keep your upper arms vertical and flare elbows out as little as possible.\\n\\n---\\n\\n### Cool-down (5 minutes)\\n- Overhead Tricep Stretch: 30 seconds per arm\\n- Standing Bicep Wall Stretch: 30 seconds per arm\\n- Deep breathing & wrist mobility release\"}}}], \"role\": \"user\"}, \"event_time\": \"2026-10-05T00:34:59.272146Z\"}, {\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"text\": \"Your arm workout routine has been **approved** and is ready to go! Here is your complete plan for today:\\n\\n---\\n\\n# \ud83e\uddbe Approved Arms Workout Routine\\n\\n### **Warm-up (5\u20137 minutes)**\\n* **Arm Circles:** 30 seconds forward, 30 seconds backward\\n* **Band Pull-Aparts:** 2 sets of 15 reps\\n* **Wrist & Elbow Mobility:** Light wrist circles and arm swings\\n\\n---\\n\\n### **Primary Exercises**\\n\\n1. **Dumbbell Bicep Curls**\\n   - **Sets:** 3\\n   - **Reps:** 10\u201312\\n   - **Rest:** 60 seconds\\n   - *Form Cue:* Keep your elbows pinned close to your torso. Focus on a controlled 2-second eccentric (lowering) phase.\\n\\n2. **Cable Tricep Pushdowns**\\n   - **Sets:** 3\\n   - **Reps:** 10\u201312\\n   - **Rest:** 60 seconds\\n   - *Form Cue:* Keep your upper arms stationary against your ribs and squeeze your triceps firmly at the bottom of each rep.\\n\\n3. **Incline Dumbbell Hammer Curls**\\n   - **Sets:** 3\\n   - **Reps:** 10\u201312\\n   - **Rest:** 60 seconds\\n   - *Form Cue:* Keep palms facing each other (neutral grip) to target the brachialis and forearm flexors.\\n\\n4. **Overhead Dumbbell Tricep Extension**\\n   - **Sets:** 3\\n   - **Reps:** 10\u201312\\n   - **Rest:** 60 seconds\\n   - *Form Cue:* Maintain vertical upper arms and avoid letting your elbows flare excessively outward.\\n\\n---\\n\\n### **Cool-down (5 minutes)**\\n* **Overhead Tricep Stretch:** 30 seconds per arm\\n* **Standing Bicep Wall Stretch:** 30 seconds per arm\\n* **Wrist Release & Deep Breathing:** 1\u20132 minutes\\n\\n---\\n\\n### Coach's Tips:\\n- Select a weight that leaves 1\u20132 reps in reserve (RPE 8) on your first set.\\n- Stay hydrated and focus on mind-muscle connection over heavy momentum swinging. Have a great workout!\"}], \"role\": \"model\"}, \"event_time\": \"2026-10-05T00:34:59.275548Z\"}]}]}"
+      },
+      {
+        "prompt_display_text": "Design a heavy leg day workout routine for me today with barbell back squats.",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Design a heavy leg day workout routine for me today with barbell back squats.\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "",
+        "reference_raw_json": "",
+        "response_display_text": "",
+        "response_raw_json": "",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"workout_agent_service\": {\"agent_id\": \"workout_agent_service\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are a professional fitness coach and workout routine designer.\\nYour goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).\\n\\nInstructions:\\n1. Identify the user's workout focus for the day.\\n2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.\\n3. Call the `submit_workout_routine` tool with:\\n   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).\\n   - `workout_plan`: the complete, nicely formatted workout plan markdown.\\n   - `focus_area`: the user's focus area for the day.\\n4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.\\n5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.\\n6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.\\n\", \"tools\": [{\"function_declarations\": [{\"description\": \"Submits and evaluates the workout routine for approval.\\n\\nIf the routine includes bench press, squats, or deadlifts, it triggers a\\nhuman-in-the-loop pause asking the user whether they want to work with a coach.\\nOtherwise, the routine is instantly approved.\\n\\nArgs:\\n    exercises: List of exercise names included in the routine (e.g. ['Barbell Back Squat', 'Leg Press']).\\n    workout_plan: The detailed workout routine in markdown (warm-up, sets, reps, rest, cool-down).\\n    focus_area: The user's focus area for the day (e.g. 'legs', 'arms', 'chest', 'core').\\n    tool_context: Context provided by the ADK runtime.\\n\\nReturns:\\n    A dictionary with approval status and workout details.\", \"name\": \"submit_workout_routine\", \"parameters_json_schema\": {\"properties\": {\"exercises\": {\"items\": {\"type\": \"string\"}, \"title\": \"Exercises\", \"type\": \"array\"}, \"workout_plan\": {\"title\": \"Workout Plan\", \"type\": \"string\"}, \"focus_area\": {\"title\": \"Focus Area\", \"type\": \"string\"}}, \"required\": [\"exercises\", \"workout_plan\", \"focus_area\"], \"title\": \"submit_workout_routineParams\", \"type\": \"object\"}, \"response_json_schema\": {\"additionalProperties\": true, \"type\": \"object\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"call_1259804\", \"args\": {\"exercises\": [\"Barbell Back Squat\", \"Romanian Deadlift\", \"Leg Press\", \"Hamstring Curl\", \"Standing Calf Raise\"], \"workout_plan\": \"# Heavy Leg Day Workout Routine\\n\\n## Warm-Up (8\u201310 Minutes)\\n- 5 minutes light cardio (stationary bike or incline treadmill walk)\\n- Dynamic stretches: Leg swings, bodyweight squats, hip openers, ankle mobility drills\\n- Warm-up sets: 2\u20133 ramp-up sets of Barbell Back Squats with light/empty bar\\n\\n## Primary Workout\\n1. **Barbell Back Squats**\\n   - Sets: 4\\n   - Reps: 5\u20136 reps (Heavy compound focus)\\n   - Rest: 2.5\u20133 minutes between sets\\n   - Notes: Maintain brace, chest up, hit parallel or below with control.\\n\\n2. **Romanian Deadlifts (RDLs)**\\n   - Sets: 3\\n   - Reps: 6\u20138 reps\\n   - Rest: 2 minutes between sets\\n   - Notes: Hinge at the hips, slight bend in knees, feel deep stretch in hamstrings.\\n\\n3. **Leg Press**\\n   - Sets: 3\\n   - Reps: 8\u201310 reps\\n   - Rest: 90\u2013120 seconds\\n   - Notes: Full range of motion without letting lower back round off the pad.\\n\\n4. **Lying or Seated Hamstring Curls**\\n   - Sets: 3\\n   - Reps: 10\u201312 reps\\n   - Rest: 60\u201390 seconds\\n   - Notes: Controlled eccentric (2\u20133 seconds down).\\n\\n5. **Standing Calf Raises**\\n   - Sets: 4\\n   - Reps: 12\u201315 reps\\n   - Rest: 60 seconds\\n   - Notes: Full stretch at the bottom and a 1-second pause at the peak contraction.\\n\\n## Cool-Down & Mobility (5\u20138 Minutes)\\n- Light walking to bring heart rate down\\n- Static stretching: Quad stretch, seated forward bend for hamstrings, pigeon pose for glutes, and calf stretch.\", \"focus_area\": \"legs\"}, \"name\": \"submit_workout_routine\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-05T00:34:53.977412Z\"}, {\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"adk-00edad23-0797-489a-b34e-bf056ddaf125\", \"args\": {\"originalFunctionCall\": {\"id\": \"call_1259804\", \"args\": {\"exercises\": [\"Barbell Back Squat\", \"Romanian Deadlift\", \"Leg Press\", \"Hamstring Curl\", \"Standing Calf Raise\"], \"workout_plan\": \"# Heavy Leg Day Workout Routine\\n\\n## Warm-Up (8\u201310 Minutes)\\n- 5 minutes light cardio (stationary bike or incline treadmill walk)\\n- Dynamic stretches: Leg swings, bodyweight squats, hip openers, ankle mobility drills\\n- Warm-up sets: 2\u20133 ramp-up sets of Barbell Back Squats with light/empty bar\\n\\n## Primary Workout\\n1. **Barbell Back Squats**\\n   - Sets: 4\\n   - Reps: 5\u20136 reps (Heavy compound focus)\\n   - Rest: 2.5\u20133 minutes between sets\\n   - Notes: Maintain brace, chest up, hit parallel or below with control.\\n\\n2. **Romanian Deadlifts (RDLs)**\\n   - Sets: 3\\n   - Reps: 6\u20138 reps\\n   - Rest: 2 minutes between sets\\n   - Notes: Hinge at the hips, slight bend in knees, feel deep stretch in hamstrings.\\n\\n3. **Leg Press**\\n   - Sets: 3\\n   - Reps: 8\u201310 reps\\n   - Rest: 90\u2013120 seconds\\n   - Notes: Full range of motion without letting lower back round off the pad.\\n\\n4. **Lying or Seated Hamstring Curls**\\n   - Sets: 3\\n   - Reps: 10\u201312 reps\\n   - Rest: 60\u201390 seconds\\n   - Notes: Controlled eccentric (2\u20133 seconds down).\\n\\n5. **Standing Calf Raises**\\n   - Sets: 4\\n   - Reps: 12\u201315 reps\\n   - Rest: 60 seconds\\n   - Notes: Full stretch at the bottom and a 1-second pause at the peak contraction.\\n\\n## Cool-Down & Mobility (5\u20138 Minutes)\\n- Light walking to bring heart rate down\\n- Static stretching: Quad stretch, seated forward bend for hamstrings, pigeon pose for glutes, and calf stretch.\", \"focus_area\": \"legs\"}, \"name\": \"submit_workout_routine\"}, \"toolConfirmation\": {\"hint\": \"Your workout routine requires heavy compound lift(s): Barbell Back Squat, Romanian Deadlift. Would you like to work with a coach for form and safety guidance?\", \"confirmed\": false, \"payload\": {\"focus_area\": \"legs\", \"compound_lifts\": [\"Barbell Back Squat\", \"Romanian Deadlift\"], \"exercises\": [\"Barbell Back Squat\", \"Romanian Deadlift\", \"Leg Press\", \"Hamstring Curl\", \"Standing Calf Raise\"], \"workout_plan\": \"# Heavy Leg Day Workout Routine\\n\\n## Warm-Up (8\u201310 Minutes)\\n- 5 minutes light cardio (stationary bike or incline treadmill walk)\\n- Dynamic stretches: Leg swings, bodyweight squats, hip openers, ankle mobility drills\\n- Warm-up sets: 2\u20133 ramp-up sets of Barbell Back Squats with light/empty bar\\n\\n## Primary Workout\\n1. **Barbell Back Squats**\\n   - Sets: 4\\n   - Reps: 5\u20136 reps (Heavy compound focus)\\n   - Rest: 2.5\u20133 minutes between sets\\n   - Notes: Maintain brace, chest up, hit parallel or below with control.\\n\\n2. **Romanian Deadlifts (RDLs)**\\n   - Sets: 3\\n   - Reps: 6\u20138 reps\\n   - Rest: 2 minutes between sets\\n   - Notes: Hinge at the hips, slight bend in knees, feel deep stretch in hamstrings.\\n\\n3. **Leg Press**\\n   - Sets: 3\\n   - Reps: 8\u201310 reps\\n   - Rest: 90\u2013120 seconds\\n   - Notes: Full range of motion without letting lower back round off the pad.\\n\\n4. **Lying or Seated Hamstring Curls**\\n   - Sets: 3\\n   - Reps: 10\u201312 reps\\n   - Rest: 60\u201390 seconds\\n   - Notes: Controlled eccentric (2\u20133 seconds down).\\n\\n5. **Standing Calf Raises**\\n   - Sets: 4\\n   - Reps: 12\u201315 reps\\n   - Rest: 60 seconds\\n   - Notes: Full stretch at the bottom and a 1-second pause at the peak contraction.\\n\\n## Cool-Down & Mobility (5\u20138 Minutes)\\n- Light walking to bring heart rate down\\n- Static stretching: Quad stretch, seated forward bend for hamstrings, pigeon pose for glutes, and calf stretch.\", \"prompt\": \"Would you like to work with a coach?\"}}}, \"name\": \"adk_request_confirmation\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-05T00:34:59.545910Z\"}, {\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"function_response\": {\"id\": \"call_1259804\", \"name\": \"submit_workout_routine\", \"response\": {\"status\": \"paused_for_coach_confirmation\", \"message\": \"Routine requires ['Barbell Back Squat', 'Romanian Deadlift']. Paused for human-in-the-loop: prompting user whether they want to work with a coach.\"}}}], \"role\": \"user\"}, \"event_time\": \"2026-10-05T00:34:59.545192Z\"}]}]}"
+      },
+      {
+        "prompt_display_text": "Design a back and posterior chain workout routine for me today centered around heavy barbell deadlifts.",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Design a back and posterior chain workout routine for me today centered around heavy barbell deadlifts.\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "",
+        "reference_raw_json": "",
+        "response_display_text": "",
+        "response_raw_json": "",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"workout_agent_service\": {\"agent_id\": \"workout_agent_service\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are a professional fitness coach and workout routine designer.\\nYour goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).\\n\\nInstructions:\\n1. Identify the user's workout focus for the day.\\n2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.\\n3. Call the `submit_workout_routine` tool with:\\n   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).\\n   - `workout_plan`: the complete, nicely formatted workout plan markdown.\\n   - `focus_area`: the user's focus area for the day.\\n4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.\\n5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.\\n6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.\\n\", \"tools\": [{\"function_declarations\": [{\"description\": \"Submits and evaluates the workout routine for approval.\\n\\nIf the routine includes bench press, squats, or deadlifts, it triggers a\\nhuman-in-the-loop pause asking the user whether they want to work with a coach.\\nOtherwise, the routine is instantly approved.\\n\\nArgs:\\n    exercises: List of exercise names included in the routine (e.g. ['Barbell Back Squat', 'Leg Press']).\\n    workout_plan: The detailed workout routine in markdown (warm-up, sets, reps, rest, cool-down).\\n    focus_area: The user's focus area for the day (e.g. 'legs', 'arms', 'chest', 'core').\\n    tool_context: Context provided by the ADK runtime.\\n\\nReturns:\\n    A dictionary with approval status and workout details.\", \"name\": \"submit_workout_routine\", \"parameters_json_schema\": {\"properties\": {\"exercises\": {\"items\": {\"type\": \"string\"}, \"title\": \"Exercises\", \"type\": \"array\"}, \"workout_plan\": {\"title\": \"Workout Plan\", \"type\": \"string\"}, \"focus_area\": {\"title\": \"Focus Area\", \"type\": \"string\"}}, \"required\": [\"exercises\", \"workout_plan\", \"focus_area\"], \"title\": \"submit_workout_routineParams\", \"type\": \"object\"}, \"response_json_schema\": {\"additionalProperties\": true, \"type\": \"object\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"call_484069\", \"args\": {\"workout_plan\": \"### Back & Posterior Chain Strength Routine\\n\\n#### **Warm-up (8\u201310 minutes)**\\n- Cat-Cow Stretch: 10 reps\\n- World's Greatest Stretch: 5 reps per side\\n- Glute Bridges: 2 sets of 12 reps\\n- Banded Pull-aparts: 2 sets of 15 reps\\n- Deadlift Ramp-up sets: Light bar work moving progressively up to working weight\\n\\n---\\n\\n#### **Working Sets**\\n1. **Conventional Barbell Deadlift**\\n   - Sets: 4\\n   - Reps: 4\u20136\\n   - Rest: 3\u20134 minutes\\n   - *Cue:* Maintain a neutral spine, brace your core, and drive through the floor.\\n\\n2. **Barbell Row (Overhand Grip)**\\n   - Sets: 3\\n   - Reps: 8\u201310\\n   - Rest: 2 minutes\\n   - *Cue:* Hinge at the hips, pull towards the lower ribcage, squeeze scapulae.\\n\\n3. **Romanian Deadlift (Dumbbell or Barbell)**\\n   - Sets: 3\\n   - Reps: 8\u201310\\n   - Rest: 2 minutes\\n   - *Cue:* Push hips back while keeping knees soft, feel tension in hamstrings.\\n\\n4. **Lat Pulldown (Wide Grip)**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 90 seconds\\n   - *Cue:* Depress shoulders, pull elbows down to sides.\\n\\n5. **Cable Face Pulls**\\n   - Sets: 3\\n   - Reps: 15\\n   - Rest: 60 seconds\\n   - *Cue:* Target rear delts and external rotators; pull rope towards eye level.\\n\\n---\\n\\n#### **Cool-down (5 minutes)**\\n- Child's Pose: 60 seconds\\n- Standing Hamstring Stretch: 30 seconds per side\\n- Kneeling Lat Stretch: 30 seconds per side\", \"focus_area\": \"Back and Posterior Chain\", \"exercises\": [\"Barbell Deadlift\", \"Romanian Deadlift\", \"Barbell Row\", \"Lat Pulldown\", \"Face Pulls\"]}, \"name\": \"submit_workout_routine\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-05T00:34:53.984162Z\"}, {\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"adk-064003b8-d2f8-49f8-a147-19ec4d62585c\", \"args\": {\"originalFunctionCall\": {\"id\": \"call_484069\", \"args\": {\"workout_plan\": \"### Back & Posterior Chain Strength Routine\\n\\n#### **Warm-up (8\u201310 minutes)**\\n- Cat-Cow Stretch: 10 reps\\n- World's Greatest Stretch: 5 reps per side\\n- Glute Bridges: 2 sets of 12 reps\\n- Banded Pull-aparts: 2 sets of 15 reps\\n- Deadlift Ramp-up sets: Light bar work moving progressively up to working weight\\n\\n---\\n\\n#### **Working Sets**\\n1. **Conventional Barbell Deadlift**\\n   - Sets: 4\\n   - Reps: 4\u20136\\n   - Rest: 3\u20134 minutes\\n   - *Cue:* Maintain a neutral spine, brace your core, and drive through the floor.\\n\\n2. **Barbell Row (Overhand Grip)**\\n   - Sets: 3\\n   - Reps: 8\u201310\\n   - Rest: 2 minutes\\n   - *Cue:* Hinge at the hips, pull towards the lower ribcage, squeeze scapulae.\\n\\n3. **Romanian Deadlift (Dumbbell or Barbell)**\\n   - Sets: 3\\n   - Reps: 8\u201310\\n   - Rest: 2 minutes\\n   - *Cue:* Push hips back while keeping knees soft, feel tension in hamstrings.\\n\\n4. **Lat Pulldown (Wide Grip)**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 90 seconds\\n   - *Cue:* Depress shoulders, pull elbows down to sides.\\n\\n5. **Cable Face Pulls**\\n   - Sets: 3\\n   - Reps: 15\\n   - Rest: 60 seconds\\n   - *Cue:* Target rear delts and external rotators; pull rope towards eye level.\\n\\n---\\n\\n#### **Cool-down (5 minutes)**\\n- Child's Pose: 60 seconds\\n- Standing Hamstring Stretch: 30 seconds per side\\n- Kneeling Lat Stretch: 30 seconds per side\", \"focus_area\": \"Back and Posterior Chain\", \"exercises\": [\"Barbell Deadlift\", \"Romanian Deadlift\", \"Barbell Row\", \"Lat Pulldown\", \"Face Pulls\"]}, \"name\": \"submit_workout_routine\"}, \"toolConfirmation\": {\"hint\": \"Your workout routine requires heavy compound lift(s): Barbell Deadlift, Romanian Deadlift. Would you like to work with a coach for form and safety guidance?\", \"confirmed\": false, \"payload\": {\"focus_area\": \"Back and Posterior Chain\", \"compound_lifts\": [\"Barbell Deadlift\", \"Romanian Deadlift\"], \"exercises\": [\"Barbell Deadlift\", \"Romanian Deadlift\", \"Barbell Row\", \"Lat Pulldown\", \"Face Pulls\"], \"workout_plan\": \"### Back & Posterior Chain Strength Routine\\n\\n#### **Warm-up (8\u201310 minutes)**\\n- Cat-Cow Stretch: 10 reps\\n- World's Greatest Stretch: 5 reps per side\\n- Glute Bridges: 2 sets of 12 reps\\n- Banded Pull-aparts: 2 sets of 15 reps\\n- Deadlift Ramp-up sets: Light bar work moving progressively up to working weight\\n\\n---\\n\\n#### **Working Sets**\\n1. **Conventional Barbell Deadlift**\\n   - Sets: 4\\n   - Reps: 4\u20136\\n   - Rest: 3\u20134 minutes\\n   - *Cue:* Maintain a neutral spine, brace your core, and drive through the floor.\\n\\n2. **Barbell Row (Overhand Grip)**\\n   - Sets: 3\\n   - Reps: 8\u201310\\n   - Rest: 2 minutes\\n   - *Cue:* Hinge at the hips, pull towards the lower ribcage, squeeze scapulae.\\n\\n3. **Romanian Deadlift (Dumbbell or Barbell)**\\n   - Sets: 3\\n   - Reps: 8\u201310\\n   - Rest: 2 minutes\\n   - *Cue:* Push hips back while keeping knees soft, feel tension in hamstrings.\\n\\n4. **Lat Pulldown (Wide Grip)**\\n   - Sets: 3\\n   - Reps: 10\u201312\\n   - Rest: 90 seconds\\n   - *Cue:* Depress shoulders, pull elbows down to sides.\\n\\n5. **Cable Face Pulls**\\n   - Sets: 3\\n   - Reps: 15\\n   - Rest: 60 seconds\\n   - *Cue:* Target rear delts and external rotators; pull rope towards eye level.\\n\\n---\\n\\n#### **Cool-down (5 minutes)**\\n- Child's Pose: 60 seconds\\n- Standing Hamstring Stretch: 30 seconds per side\\n- Kneeling Lat Stretch: 30 seconds per side\", \"prompt\": \"Would you like to work with a coach?\"}}}, \"name\": \"adk_request_confirmation\"}}], \"role\": \"model\"}, \"event_time\": \"2026-10-05T00:35:01.526700Z\"}, {\"author\": \"workout_agent_service\", \"content\": {\"parts\": [{\"function_response\": {\"id\": \"call_484069\", \"name\": \"submit_workout_routine\", \"response\": {\"status\": \"paused_for_coach_confirmation\", \"message\": \"Routine requires ['Barbell Deadlift', 'Romanian Deadlift']. Paused for human-in-the-loop: prompting user whether they want to work with a coach.\"}}}], \"role\": \"user\"}, \"event_time\": \"2026-10-05T00:35:01.526090Z\"}]}]}"
+      }
+    ]
+  },
+  "agent_info": null
+}

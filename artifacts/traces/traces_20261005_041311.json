@@ -1,0 +1,285 @@
+{
+  "eval_cases": [
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "Design an arm workout routine for me today with dumbbell curls and tricep pushdowns. Do not include bench press, squats, or deadlifts."
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "Your arm workout routine has been **instantly approved**! Here is your complete plan for today:\n\n---\n\n# 💪 Arm Hypertrophy Workout Routine\n\n### **Focus Area:** Arms (Biceps & Triceps)  \n### **Status:** Approved\n\n---\n\n## 🏃 Warm-Up (5–8 minutes)\n*Get blood flowing to the upper body and prep the elbow and shoulder joints.*\n\n- **Arm Circles (Small to Large):** 30 seconds forward, 30 seconds backward\n- **Light Cardio (Jumping Jacks or Shadow Boxing):** 2–3 minutes\n- **Resistance Band Pull-Aparts:** 2 sets of 15 reps\n- **Wrist Rotations & Forearm Stretches:** 1 minute\n\n---\n\n## 🏋️ Primary Workout\n\n| Exercise | Sets | Reps | Rest | Key Coaching Cue |\n| :--- | :---: | :---: | :---: | :--- |\n| **1. Standing Dumbbell Bicep Curls** | 3 | 10–12 | 60s | Keep elbows pinned to your sides; control the eccentric (lowering) phase. |\n| **2. Cable Tricep Pushdowns** *(Rope or Straight Bar)* | 3 | 12–15 | 60s | Lock your shoulders down; fully lock out and squeeze the triceps at the bottom. |\n| **3. Dumbbell Hammer Curls** | 3 | 10–12 | 60s | Neutral grip (palms facing each other) to build the brachialis and forearm thickness. |\n| **4. Overhead Dumbbell Tricep Extension** | 3 | 10–12 | 60s | Keep elbows pointed forward/upward, avoiding excessive flare to hit the long head. |\n| **5. Incline Dumbbell Curls** | 3 | 12 | 60s | Incline bench (~45°) provides a deep stretch at the bottom for maximum bicep activation. |\n| **6. Bench Dips** | 3 | 12–15 | 60s | Keep hips close to the bench to minimize anterior shoulder strain. |\n\n---\n\n## 🧘 Cool-Down & Mobility (3–5 minutes)\n*Promote recovery and reduce post-workout soreness.*\n\n- **Overhead Triceps Stretch:** 30 seconds per side\n- **Standing Biceps Wall Stretch:** 30 seconds per side\n- **Cross-Body Shoulder/Tricep Stretch:** 30 seconds per side\n- **Forearm Flexor & Extensor Stretch:** 30 seconds per side\n\n---\n\n### Coach's Tips:\n- Stay hydrated and maintain a 2-second lowering tempo on each rep to maximize muscle tension.\n- Have a great workout! Let me know how it goes or if you want any adjustments."
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "arms_routine_instant_approval",
+      "agent_data": {
+        "agents": {
+          "workout_agent_service": {
+            "agent_id": "workout_agent_service",
+            "agent_type": "LlmAgent",
+            "description": "",
+            "instruction": "You are a professional fitness coach and workout routine designer.\nYour goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).\n\nInstructions:\n1. Identify the user's workout focus for the day.\n2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.\n3. Call the `submit_workout_routine` tool with:\n   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).\n   - `workout_plan`: the complete, nicely formatted workout plan markdown.\n   - `focus_area`: the user's focus area for the day.\n4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.\n5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.\n6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.\n",
+            "tools": [
+              {
+                "function_declarations": [
+                  {
+                    "description": "Submits and evaluates the workout routine for approval.\n\nIf the routine includes bench press, squats, or deadlifts, it triggers a\nhuman-in-the-loop pause asking the user whether they want to work with a coach.\nOtherwise, the routine is instantly approved.\n\nArgs:\n    exercises: List of exercise names included in the routine (e.g. ['Barbell Back Squat', 'Leg Press']).\n    workout_plan: The detailed workout routine in markdown (warm-up, sets, reps, rest, cool-down).\n    focus_area: The user's focus area for the day (e.g. 'legs', 'arms', 'chest', 'core').\n    tool_context: Context provided by the ADK runtime.\n\nReturns:\n    A dictionary with approval status and workout details.",
+                    "name": "submit_workout_routine",
+                    "parameters_json_schema": {
+                      "properties": {
+                        "exercises": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "title": "Exercises",
+                          "type": "array"
+                        },
+                        "workout_plan": {
+                          "title": "Workout Plan",
+                          "type": "string"
+                        },
+                        "focus_area": {
+                          "title": "Focus Area",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "exercises",
+                        "workout_plan",
+                        "focus_area"
+                      ],
+                      "title": "submit_workout_routineParams",
+                      "type": "object"
+                    },
+                    "response_json_schema": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    }
+                  }
+                ]
+              }
+            ],
+            "sub_agents": []
+          }
+        },
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "workout_agent_service",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_1504532",
+                        "args": {
+                          "workout_plan": "# Arm Hypertrophy Workout Routine\n\n## Warm-Up (5–8 minutes)\n- **Arm Circles (Small to Large):** 30 seconds forward, 30 seconds backward\n- **Light Cardio (Jumping Jacks / Shadow Boxing):** 2–3 minutes to raise body temperature\n- **Resistance Band Pull-Aparts:** 2 sets of 15 reps\n- **Wrist Rotations & Forearm Flexor/Extensor Stretches:** 1 minute\n\n---\n\n## Primary Workout\n\n### 1. Standing Dumbbell Bicep Curls\n- **Sets:** 3\n- **Reps:** 10–12\n- **Rest:** 60 seconds\n- *Form Tip:* Keep your elbows pinned close to your torso. Avoid swinging the weights.\n\n### 2. Cable Tricep Pushdowns (Rope or Straight Bar)\n- **Sets:** 3\n- **Reps:** 12–15\n- **Rest:** 60 seconds\n- *Form Tip:* Keep your shoulders down and locked; fully extend and squeeze the triceps at the bottom of the movement.\n\n### 3. Dumbbell Hammer Curls\n- **Sets:** 3\n- **Reps:** 10–12\n- **Rest:** 60 seconds\n- *Form Tip:* Maintain a neutral grip (palms facing each other) to target the brachialis and brachioradialis.\n\n### 4. Overhead Dumbbell Tricep Extension\n- **Sets:** 3\n- **Reps:** 10–12\n- **Rest:** 60 seconds\n- *Form Tip:* Keep your upper arms close to your ears and flare your elbows as little as possible to isolate the long head of the triceps.\n\n### 5. Incline Dumbbell Curls\n- **Sets:** 3\n- **Reps:** 12\n- **Rest:** 60 seconds\n- *Form Tip:* Sit back on a 45-degree incline bench to stretch the biceps at the bottom position before curling.\n\n### 6. Bench Dips\n- **Sets:** 3\n- **Reps:** 12–15\n- **Rest:** 60 seconds\n- *Form Tip:* Keep your hips close to the bench to reduce shoulder strain and emphasize the triceps.\n\n---\n\n## Cool-Down (3–5 minutes)\n- **Overhead Triceps Stretch:** 30 seconds per arm\n- **Cross-Body Arm Stretch:** 30 seconds per arm\n- **Standing Biceps Wall Stretch:** 30 seconds per arm\n- **Forearm Extensor & Flexor Stretch:** 30 seconds each side\n",
+                          "focus_area": "arms",
+                          "exercises": [
+                            "Standing Dumbbell Bicep Curls",
+                            "Cable Tricep Pushdowns",
+                            "Dumbbell Hammer Curls",
+                            "Overhead Dumbbell Tricep Extension",
+                            "Incline Dumbbell Curls",
+                            "Bench Dips"
+                          ]
+                        },
+                        "name": "submit_workout_routine"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                },
+                "event_time": "2026-10-05T04:13:22.229866Z"
+              },
+              {
+                "author": "workout_agent_service",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_1504532",
+                        "name": "submit_workout_routine",
+                        "response": {
+                          "status": "instantly_approved",
+                          "message": "No bench press, squats, or deadlifts in this routine. Workout routine is instantly approved!",
+                          "workout_plan": "# Arm Hypertrophy Workout Routine\n\n## Warm-Up (5–8 minutes)\n- **Arm Circles (Small to Large):** 30 seconds forward, 30 seconds backward\n- **Light Cardio (Jumping Jacks / Shadow Boxing):** 2–3 minutes to raise body temperature\n- **Resistance Band Pull-Aparts:** 2 sets of 15 reps\n- **Wrist Rotations & Forearm Flexor/Extensor Stretches:** 1 minute\n\n---\n\n## Primary Workout\n\n### 1. Standing Dumbbell Bicep Curls\n- **Sets:** 3\n- **Reps:** 10–12\n- **Rest:** 60 seconds\n- *Form Tip:* Keep your elbows pinned close to your torso. Avoid swinging the weights.\n\n### 2. Cable Tricep Pushdowns (Rope or Straight Bar)\n- **Sets:** 3\n- **Reps:** 12–15\n- **Rest:** 60 seconds\n- *Form Tip:* Keep your shoulders down and locked; fully extend and squeeze the triceps at the bottom of the movement.\n\n### 3. Dumbbell Hammer Curls\n- **Sets:** 3\n- **Reps:** 10–12\n- **Rest:** 60 seconds\n- *Form Tip:* Maintain a neutral grip (palms facing each other) to target the brachialis and brachioradialis.\n\n### 4. Overhead Dumbbell Tricep Extension\n- **Sets:** 3\n- **Reps:** 10–12\n- **Rest:** 60 seconds\n- *Form Tip:* Keep your upper arms close to your ears and flare your elbows as little as possible to isolate the long head of the triceps.\n\n### 5. Incline Dumbbell Curls\n- **Sets:** 3\n- **Reps:** 12\n- **Rest:** 60 seconds\n- *Form Tip:* Sit back on a 45-degree incline bench to stretch the biceps at the bottom position before curling.\n\n### 6. Bench Dips\n- **Sets:** 3\n- **Reps:** 12–15\n- **Rest:** 60 seconds\n- *Form Tip:* Keep your hips close to the bench to reduce shoulder strain and emphasize the triceps.\n\n---\n\n## Cool-Down (3–5 minutes)\n- **Overhead Triceps Stretch:** 30 seconds per arm\n- **Cross-Body Arm Stretch:** 30 seconds per arm\n- **Standing Biceps Wall Stretch:** 30 seconds per arm\n- **Forearm Extensor & Flexor Stretch:** 30 seconds each side\n"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                },
+                "event_time": "2026-10-05T04:13:31.236085Z"
+              },
+              {
+                "author": "workout_agent_service",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Your arm workout routine has been **instantly approved**! Here is your complete plan for today:\n\n---\n\n# 💪 Arm Hypertrophy Workout Routine\n\n### **Focus Area:** Arms (Biceps & Triceps)  \n### **Status:** Approved\n\n---\n\n## 🏃 Warm-Up (5–8 minutes)\n*Get blood flowing to the upper body and prep the elbow and shoulder joints.*\n\n- **Arm Circles (Small to Large):** 30 seconds forward, 30 seconds backward\n- **Light Cardio (Jumping Jacks or Shadow Boxing):** 2–3 minutes\n- **Resistance Band Pull-Aparts:** 2 sets of 15 reps\n- **Wrist Rotations & Forearm Stretches:** 1 minute\n\n---\n\n## 🏋️ Primary Workout\n\n| Exercise | Sets | Reps | Rest | Key Coaching Cue |\n| :--- | :---: | :---: | :---: | :--- |\n| **1. Standing Dumbbell Bicep Curls** | 3 | 10–12 | 60s | Keep elbows pinned to your sides; control the eccentric (lowering) phase. |\n| **2. Cable Tricep Pushdowns** *(Rope or Straight Bar)* | 3 | 12–15 | 60s | Lock your shoulders down; fully lock out and squeeze the triceps at the bottom. |\n| **3. Dumbbell Hammer Curls** | 3 | 10–12 | 60s | Neutral grip (palms facing each other) to build the brachialis and forearm thickness. |\n| **4. Overhead Dumbbell Tricep Extension** | 3 | 10–12 | 60s | Keep elbows pointed forward/upward, avoiding excessive flare to hit the long head. |\n| **5. Incline Dumbbell Curls** | 3 | 12 | 60s | Incline bench (~45°) provides a deep stretch at the bottom for maximum bicep activation. |\n| **6. Bench Dips** | 3 | 12–15 | 60s | Keep hips close to the bench to minimize anterior shoulder strain. |\n\n---\n\n## 🧘 Cool-Down & Mobility (3–5 minutes)\n*Promote recovery and reduce post-workout soreness.*\n\n- **Overhead Triceps Stretch:** 30 seconds per side\n- **Standing Biceps Wall Stretch:** 30 seconds per side\n- **Cross-Body Shoulder/Tricep Stretch:** 30 seconds per side\n- **Forearm Flexor & Extensor Stretch:** 30 seconds per side\n\n---\n\n### Coach's Tips:\n- Stay hydrated and maintain a 2-second lowering tempo on each rep to maximize muscle tension.\n- Have a great workout! Let me know how it goes or if you want any adjustments."
+                    }
+                  ],
+                  "role": "model"
+                },
+                "event_time": "2026-10-05T04:13:31.239988Z"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "Design a core and cardio workout for me today with planks, Russian twists, and jumping jacks. No bench press, squats, or deadlifts."
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "Your **Core & Cardio** workout routine has been **approved** and is ready to go!\n\n---\n\n# 🔥 Core & Cardio Circuit Workout\n\n### **Warm-up (5 Minutes)**\n*Goal: Elevate heart rate and mobilize the spine/hips.*\n- **Light Jog in Place**: 1 minute\n- **Arm Circles & Torso Twists**: 1 minute\n- **High Knees**: 1 minute\n- **Inchworms**: 1 minute\n- **Cat-Cow Stretch**: 1 minute\n\n---\n\n### **Main Circuit (3–4 Rounds)**\n*Perform each exercise consecutively. Rest 15–20 seconds between movements, and rest 60 seconds between rounds.*\n\n1. **Jumping Jacks**\n   - **Duration**: 45 seconds\n   - **Rest**: 15 seconds\n   - **Coach Tip**: Land softly on the balls of your feet and keep a steady, aerobic pace.\n\n2. **Forearm Plank**\n   - **Duration**: 45–60 seconds hold\n   - **Rest**: 20 seconds\n   - **Coach Tip**: Keep your elbows stacked directly under your shoulders, squeeze your glutes, and avoid letting your lower back sag.\n\n3. **Russian Twists**\n   - **Reps**: 20 total (10 per side)\n   - **Rest**: 20 seconds\n   - **Coach Tip**: Keep your chest proud and rotate your shoulders, not just your hands. Lift feet off the ground for an extra challenge.\n\n4. **Mountain Climbers**\n   - **Duration**: 40 seconds\n   - **Rest**: 20 seconds\n   - **Coach Tip**: Keep your hips level and drive your knees straight toward your chest with control.\n\n5. **Bicycle Crunches**\n   - **Reps**: 20 total (10 per side)\n   - **Rest**: 60 seconds before starting the next round\n   - **Coach Tip**: Slow down the tempo—focus on rotating your armpit (not just elbow) toward the opposite knee.\n\n---\n\n### **Cool-down (5 Minutes)**\n*Goal: Lower heart rate and stretch out the core and posterior chain.*\n- **Cobra / Sphinx Pose**: 45 seconds *(core/abdominal stretch)*\n- **Child's Pose**: 60 seconds *(lower back decompression)*\n- **Seated Forward Fold**: 45 seconds *(hamstrings & spine)*\n- **Deep Diaphragmatic Breathing**: 2 minutes\n\n---\n\nHave a fantastic workout! Let me know if you need any modifications or adjustments."
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "core_cardio_instant_approval",
+      "agent_data": {
+        "agents": {
+          "workout_agent_service": {
+            "agent_id": "workout_agent_service",
+            "agent_type": "LlmAgent",
+            "description": "",
+            "instruction": "You are a professional fitness coach and workout routine designer.\nYour goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).\n\nInstructions:\n1. Identify the user's workout focus for the day.\n2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.\n3. Call the `submit_workout_routine` tool with:\n   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).\n   - `workout_plan`: the complete, nicely formatted workout plan markdown.\n   - `focus_area`: the user's focus area for the day.\n4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.\n5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.\n6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.\n",
+            "tools": [
+              {
+                "function_declarations": [
+                  {
+                    "description": "Submits and evaluates the workout routine for approval.\n\nIf the routine includes bench press, squats, or deadlifts, it triggers a\nhuman-in-the-loop pause asking the user whether they want to work with a coach.\nOtherwise, the routine is instantly approved.\n\nArgs:\n    exercises: List of exercise names included in the routine (e.g. ['Barbell Back Squat', 'Leg Press']).\n    workout_plan: The detailed workout routine in markdown (warm-up, sets, reps, rest, cool-down).\n    focus_area: The user's focus area for the day (e.g. 'legs', 'arms', 'chest', 'core').\n    tool_context: Context provided by the ADK runtime.\n\nReturns:\n    A dictionary with approval status and workout details.",
+                    "name": "submit_workout_routine",
+                    "parameters_json_schema": {
+                      "properties": {
+                        "exercises": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "title": "Exercises",
+                          "type": "array"
+                        },
+                        "workout_plan": {
+                          "title": "Workout Plan",
+                          "type": "string"
+                        },
+                        "focus_area": {
+                          "title": "Focus Area",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "exercises",
+                        "workout_plan",
+                        "focus_area"
+                      ],
+                      "title": "submit_workout_routineParams",
+                      "type": "object"
+                    },
+                    "response_json_schema": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    }
+                  }
+                ]
+              }
+            ],
+            "sub_agents": []
+          }
+        },
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "workout_agent_service",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_2030723",
+                        "args": {
+                          "workout_plan": "# Core & Cardio Circuit Workout\n\n## Warm-up (5 Minutes)\n- **Light Jog in Place**: 1 minute\n- **Arm Circles & Torso Twists**: 1 minute\n- **High Knees**: 1 minute\n- **Inchworms**: 1 minute\n- **Cat-Cow Stretch**: 1 minute\n\n---\n\n## Main Circuit (3-4 Rounds)\n*Perform each exercise for the specified duration/reps. Rest 20 seconds between exercises and 60 seconds between rounds.*\n\n1. **Jumping Jacks**\n   - **Work**: 45 seconds\n   - **Focus**: Elevate heart rate and full-body rhythm.\n   - **Rest**: 15 seconds\n\n2. **Forearm Plank**\n   - **Work**: 45–60 seconds hold\n   - **Focus**: Maintain a neutral spine, engage glutes, and brace the core.\n   - **Rest**: 20 seconds\n\n3. **Russian Twists**\n   - **Work**: 20 reps (10 per side)\n   - **Focus**: Controlled rotation through the thoracic spine; keep chest lifted.\n   - **Rest**: 20 seconds\n\n4. **Mountain Climbers**\n   - **Work**: 40 seconds\n   - **Focus**: Drive knees forward smoothly while keeping hips level.\n   - **Rest**: 20 seconds\n\n5. **Bicycle Crunches**\n   - **Work**: 20 reps (10 per side)\n   - **Focus**: Slow and controlled tempo, elbow to opposite knee.\n   - **Rest**: 60 seconds before repeating the circuit\n\n---\n\n## Cool-down (5 Minutes)\n- **Cobra / Sphinx Pose**: 45 seconds (abdomen stretch)\n- **Child's Pose**: 60 seconds (lower back release)\n- **Seated Forward Fold**: 45 seconds (hamstring & spinal decompression)\n- **Deep Diaphragmatic Breathing**: 2 minutes",
+                          "focus_area": "Core & Cardio",
+                          "exercises": [
+                            "Jumping Jacks",
+                            "Forearm Plank",
+                            "Russian Twists",
+                            "Mountain Climbers",
+                            "Bicycle Crunches"
+                          ]
+                        },
+                        "name": "submit_workout_routine"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                },
+                "event_time": "2026-10-05T04:13:22.352103Z"
+              },
+              {
+                "author": "workout_agent_service",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_2030723",
+                        "name": "submit_workout_routine",
+                        "response": {
+                          "status": "instantly_approved",
+                          "message": "No bench press, squats, or deadlifts in this routine. Workout routine is instantly approved!",
+                          "workout_plan": "# Core & Cardio Circuit Workout\n\n## Warm-up (5 Minutes)\n- **Light Jog in Place**: 1 minute\n- **Arm Circles & Torso Twists**: 1 minute\n- **High Knees**: 1 minute\n- **Inchworms**: 1 minute\n- **Cat-Cow Stretch**: 1 minute\n\n---\n\n## Main Circuit (3-4 Rounds)\n*Perform each exercise for the specified duration/reps. Rest 20 seconds between exercises and 60 seconds between rounds.*\n\n1. **Jumping Jacks**\n   - **Work**: 45 seconds\n   - **Focus**: Elevate heart rate and full-body rhythm.\n   - **Rest**: 15 seconds\n\n2. **Forearm Plank**\n   - **Work**: 45–60 seconds hold\n   - **Focus**: Maintain a neutral spine, engage glutes, and brace the core.\n   - **Rest**: 20 seconds\n\n3. **Russian Twists**\n   - **Work**: 20 reps (10 per side)\n   - **Focus**: Controlled rotation through the thoracic spine; keep chest lifted.\n   - **Rest**: 20 seconds\n\n4. **Mountain Climbers**\n   - **Work**: 40 seconds\n   - **Focus**: Drive knees forward smoothly while keeping hips level.\n   - **Rest**: 20 seconds\n\n5. **Bicycle Crunches**\n   - **Work**: 20 reps (10 per side)\n   - **Focus**: Slow and controlled tempo, elbow to opposite knee.\n   - **Rest**: 60 seconds before repeating the circuit\n\n---\n\n## Cool-down (5 Minutes)\n- **Cobra / Sphinx Pose**: 45 seconds (abdomen stretch)\n- **Child's Pose**: 60 seconds (lower back release)\n- **Seated Forward Fold**: 45 seconds (hamstring & spinal decompression)\n- **Deep Diaphragmatic Breathing**: 2 minutes"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                },
+                "event_time": "2026-10-05T04:13:27.938998Z"
+              },
+              {
+                "author": "workout_agent_service",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Your **Core & Cardio** workout routine has been **approved** and is ready to go!\n\n---\n\n# 🔥 Core & Cardio Circuit Workout\n\n### **Warm-up (5 Minutes)**\n*Goal: Elevate heart rate and mobilize the spine/hips.*\n- **Light Jog in Place**: 1 minute\n- **Arm Circles & Torso Twists**: 1 minute\n- **High Knees**: 1 minute\n- **Inchworms**: 1 minute\n- **Cat-Cow Stretch**: 1 minute\n\n---\n\n### **Main Circuit (3–4 Rounds)**\n*Perform each exercise consecutively. Rest 15–20 seconds between movements, and rest 60 seconds between rounds.*\n\n1. **Jumping Jacks**\n   - **Duration**: 45 seconds\n   - **Rest**: 15 seconds\n   - **Coach Tip**: Land softly on the balls of your feet and keep a steady, aerobic pace.\n\n2. **Forearm Plank**\n   - **Duration**: 45–60 seconds hold\n   - **Rest**: 20 seconds\n   - **Coach Tip**: Keep your elbows stacked directly under your shoulders, squeeze your glutes, and avoid letting your lower back sag.\n\n3. **Russian Twists**\n   - **Reps**: 20 total (10 per side)\n   - **Rest**: 20 seconds\n   - **Coach Tip**: Keep your chest proud and rotate your shoulders, not just your hands. Lift feet off the ground for an extra challenge.\n\n4. **Mountain Climbers**\n   - **Duration**: 40 seconds\n   - **Rest**: 20 seconds\n   - **Coach Tip**: Keep your hips level and drive your knees straight toward your chest with control.\n\n5. **Bicycle Crunches**\n   - **Reps**: 20 total (10 per side)\n   - **Rest**: 60 seconds before starting the next round\n   - **Coach Tip**: Slow down the tempo—focus on rotating your armpit (not just elbow) toward the opposite knee.\n\n---\n\n### **Cool-down (5 Minutes)**\n*Goal: Lower heart rate and stretch out the core and posterior chain.*\n- **Cobra / Sphinx Pose**: 45 seconds *(core/abdominal stretch)*\n- **Child's Pose**: 60 seconds *(lower back decompression)*\n- **Seated Forward Fold**: 45 seconds *(hamstrings & spine)*\n- **Deep Diaphragmatic Breathing**: 2 minutes\n\n---\n\nHave a fantastic workout! Let me know if you need any modifications or adjustments."
+                    }
+                  ],
+                  "role": "model"
+                },
+                "event_time": "2026-10-05T04:13:27.942729Z"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

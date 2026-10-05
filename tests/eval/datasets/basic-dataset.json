@@ -1,0 +1,26 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "arms_routine_instant_approval",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Design an arm workout routine for me today with dumbbell curls and tricep pushdowns. Do not include bench press, squats, or deadlifts."
+          }
+        ]
+      }
+    },
+    {
+      "eval_case_id": "core_cardio_instant_approval",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Design a core and cardio workout for me today with planks, Russian twists, and jumping jacks. No bench press, squats, or deadlifts."
+          }
+        ]
+      }
+    }
+  ]
+}
