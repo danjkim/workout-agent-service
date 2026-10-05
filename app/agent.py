@@ -13,36 +13,67 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""Workout Agent Service - Multi-Agent Architecture with Strategic Model Routing."""
+
 import os
 from dotenv import load_dotenv
 
 from google.adk.agents import Agent
+from google.adk.agents.context_cache_config import ContextCacheConfig
 from google.adk.apps import App, ResumabilityConfig
+from google.adk.apps.app import EventsCompactionConfig
+from google.adk.apps.llm_event_summarizer import LlmEventSummarizer
 from google.adk.models import Gemini
 from google.genai import types
 
-from app.tools import submit_workout_routine
+from app.constitution import (
+    ROUTINE_ARCHITECT_INSTRUCTION,
+    SAFETY_COACH_INSTRUCTION,
+    WORKOUT_COACH_CONSTITUTION,
+)
+from app.plugins import (
+    ObservabilityAndIntentPlugin,
+    WorkoutGuardrailsPlugin,
+)
+from app.tools import (
+    calculate_workout_volume_and_intensity,
+    retrieve_exercise_technique_guidelines,
+    submit_workout_routine,
+)
 
 load_dotenv()
 
-MODEL = "gemini-3.8-flash"
+# Strategic Model Routing:
+# - Flash for high-speed coordination, real-time tool execution, and safety validation
+# - Pro for complex multi-factor periodization, volume balancing, and deep workout architecture
+MODEL_FLASH = "gemini-3.8-flash"
+MODEL_PRO = "gemini-2.5-pro"
 
-INSTRUCTION = """You are a professional fitness coach and workout routine designer.
-Your goal is to design the user's workout routine for the day depending on what they want to focus on (e.g., chest, legs, back, arms, core, cardio, hypertrophy, strength).
+# 1. Specialist Sub-Agent: Routine Architect (Strategic Model Routing: Pro for planning)
+routine_architect_agent = Agent(
+    name="routine_architect",
+    model=Gemini(
+        model=MODEL_PRO,
+        retry_options=types.HttpRetryOptions(attempts=3),
+    ),
+    description="Specialist in exercise physiology, periodization, and volume planning.",
+    instruction=ROUTINE_ARCHITECT_INSTRUCTION,
+    tools=[calculate_workout_volume_and_intensity],
+)
 
-Instructions:
-1. Identify the user's workout focus for the day.
-2. Design a structured workout routine including warm-up, primary exercises (with sets, reps, and rest periods), and cool-down.
-3. Call the `submit_workout_routine` tool with:
-   - `exercises`: the list of exercise names in the routine (e.g., ['Push-ups', 'Dumbbell Incline Bench Press', 'Cable Crossover']).
-   - `workout_plan`: the complete, nicely formatted workout plan markdown.
-   - `focus_area`: the user's focus area for the day.
-4. If the routine does NOT include bench press, squats, or deadlifts, the tool will instantly approve it.
-5. If the routine requires bench press, squats, or deadlifts, the tool will trigger a human-in-the-loop pause to ask if the user wants to work with a coach.
-6. After the tool returns the approval result, summarize and present the final approved workout routine to the user, including any coach guidance.
-"""
+# 2. Specialist Sub-Agent: Safety Coach (Strategic Model Routing: Flash for fast checks)
+safety_coach_agent = Agent(
+    name="safety_coach",
+    model=Gemini(
+        model=MODEL_FLASH,
+        retry_options=types.HttpRetryOptions(attempts=3),
+    ),
+    description="Specialist in biomechanics, form safety, joint integrity, and compound lift clearance.",
+    instruction=SAFETY_COACH_INSTRUCTION,
+    tools=[retrieve_exercise_technique_guidelines, submit_workout_routine],
+)
 
-
+# 3. Coordinator Root Agent: Manages user conversation and orchestrates specialists
 root_agent = Agent(
     # Keep in sync with agents-cli-manifest.yaml: agents-cli derives this name
     # from the project `name:` recorded there, and telemetry reports it as
@@ -50,15 +81,38 @@ root_agent = Agent(
     # and anything selecting traces by name stops finding this agent's.
     name="workout_agent_service",
     model=Gemini(
-        model=MODEL,
+        model=MODEL_FLASH,
         retry_options=types.HttpRetryOptions(attempts=3),
     ),
-    instruction=INSTRUCTION,
-    tools=[submit_workout_routine],
+    instruction=WORKOUT_COACH_CONSTITUTION,
+    tools=[
+        submit_workout_routine,
+        calculate_workout_volume_and_intensity,
+        retrieve_exercise_technique_guidelines,
+    ],
+    sub_agents=[routine_architect_agent, safety_coach_agent],
 )
 
+# Application with History Compaction, Context Caching, Guardrails, and HITL Resumability
 app = App(
-    root_agent=root_agent,
     name="app",
+    root_agent=root_agent,
+    plugins=[
+        WorkoutGuardrailsPlugin(),
+        ObservabilityAndIntentPlugin(),
+    ],
+    # History Compaction: Token-based compaction preventing context bloat on long sessions
+    events_compaction_config=EventsCompactionConfig(
+        token_threshold=32000,
+        event_retention_size=6,
+        summarizer=LlmEventSummarizer(llm=Gemini(model=MODEL_FLASH)),
+    ),
+    # Context Caching: Transparently caches system prompt and constitution on Google Cloud
+    context_cache_config=ContextCacheConfig(
+        min_tokens=2048,
+        ttl_seconds=1800,
+        cache_intervals=10,
+    ),
+    # Human-in-the-Loop Resumability
     resumability_config=ResumabilityConfig(is_resumable=True),
 )

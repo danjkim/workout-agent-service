@@ -54,6 +54,10 @@ def get_session_service():
             or os.environ.get("GOOGLE_CLOUD_LOCATION"),
             agent_engine_id=agent_engine_id,
         )
+    if db_url := os.environ.get("DATABASE_URL"):
+        from google.adk.sessions.database_session_service import DatabaseSessionService
+
+        return DatabaseSessionService(db_url=db_url)
     from google.adk.sessions.in_memory_session_service import InMemorySessionService
 
     return InMemorySessionService()
